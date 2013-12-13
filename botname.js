@@ -51,7 +51,7 @@ try {
 if (config.usedb) {
     try {
         mysql = require('mysql');
-    } catch (e) {ggjk
+    } catch (e) {
         console.log(e);
         console.log('It is likely that you do not have the mysql node module installed.'
             + '\nUse the command \'npm install mysql\' to install.');
