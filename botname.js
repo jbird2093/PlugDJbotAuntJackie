@@ -1,27 +1,31 @@
-var config = {
-    botName: 'your botname here matching db tablenames',
-    botGreetings: ['/', 'bot ', 'bot', 'jackie ', 'Jackie ', 'AuntJackie ', 'jac', 'j'],
+var _ = require("./lib/underscore");
+var plugAPI;
+try {
+	PlugAPI = require('./plugapi'); // git clone (or unzip) into the same directory as your .js file. There should be plugapi/package.json, for example (and other files)
+} catch ( ex ) {
+	PlugAPI = require('plugapi');
+}
+var UPDATECODE = '$&2h72=^^@jdBf_n!`-38UHs'; // We're not quite sure what this is yet, but the API doesn't work without it. It's possible that a future Plug update will change this, so check back here to see if this has changed, and set appropriately, if it has. You can omit using it if you wish - the value as of writing needs to be '$&2h72=^^@jdBf_n!`-38UHs', and is hardcoded into the bot in the event it is not specified below.
+var botBase = require('./lib/bot_base.js');
+var mysql;
+
+// get our config
+var config = require("./config");
+
+var defaults = {
+    botName: 'unnamed bot',
+    botGreetings: ['/', 'bot ', 'bot'],
     botCall: 'j',
-    userid: 'bot userid',
-    ownerName: 'owner name',
-    botOwner: 'owner user.id',
-    JBIRD: 'master for my constant override',
-    auth: "2mxxxxxxxxxxxxxxxxxx=?_expires=xxxxxxxxxxxxxxxxx==&user_id=xxxxxxxxxxxxxxxx=STIKLg==",
-    room: 'xxxxxxx',
-    openDate: '12/12/13',
-    roomTheme: 'xxxxxxxxxxxx', //only echoed out in commands, no functionality
+    roomTheme: 'Welcome to the room', //only echoed out in commands, no functionality
     startTime: new Date(),
-    usedb: true,
-    dbhost: 'xxxxxx',
-    dbname: 'xxxxx',
-    dbusername: 'xxxxxx',
-    dbpassword: 'xxxxxxxxx',
-    pgreets: true,
+    usedb: false,
     danceMode: true,
     games: true,
     sexy: true,
     autobop: true,
 };
+
+_.defaults(config, defaults);
 
 function startCLI() {
     process.stdin.resume();
@@ -32,13 +36,6 @@ function startCLI() {
         }
     });
 };
-
-var PlugAPI = require('./plugapi'); // git clone (or unzip) into the same directory as your .js file. There should be plugapi/package.json, for example (and other files)
-var UPDATECODE = '$&2h72=^^@jdBf_n!`-38UHs'; // We're not quite sure what this is yet, but the API doesn't work without it. It's possible that a future Plug update will change this, so check back here to see if this has changed, and set appropriately, if it has. You can omit using it if you wish - the value as of writing needs to be '$&2h72=^^@jdBf_n!`-38UHs', and is hardcoded into the bot in the event it is not specified below.
-
-// Modules
-var botBase = require('./lib/bot_base.js');
-var mysql = require('mysql');
 
 //Initializes request module
 try {
@@ -54,7 +51,7 @@ try {
 if (config.usedb) {
     try {
         mysql = require('mysql');
-    } catch (e) {
+    } catch (e) {ggjk
         console.log(e);
         console.log('It is likely that you do not have the mysql node module installed.'
             + '\nUse the command \'npm install mysql\' to install.');

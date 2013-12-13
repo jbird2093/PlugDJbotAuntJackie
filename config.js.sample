@@ -1,0 +1,7 @@
+var config = {
+    botCall: 'j2',
+    auth: "",
+    room: "",
+};
+
+module.exports = config;
