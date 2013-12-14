@@ -13,14 +13,18 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/jbird2093/PlugDJbotAuntJackie.git"
-  },
+	},
+	"bin": {
+		"jackie": "./botname.js"
+	},
   "keywords": [
     "plugdj",
     "bot"
   ],
   "dependencies" : {
     "plugapi"   :  "*",
-    "request"   :  "*"
+    "request"   :  "*",
+    "entities" :  "*"
   },
   "analyze": false,
   "devDependencies": {
