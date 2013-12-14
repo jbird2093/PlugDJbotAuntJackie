@@ -21,11 +21,11 @@
     "plugdj",
     "bot"
   ],
-  "dependencies" : {
-    "plugapi"   :  "*",
-    "request"   :  "*",
-    "entities" :  "*"
-  },
+	"dependencies" : {
+		"plugapi"   :  "git+https://github.com/atomjack/plugapi.git",
+		"request"   :  "*",
+		"entities" :  "*"
+	},
   "analyze": false,
   "devDependencies": {
   },
