@@ -1,0 +1,36 @@
+{
+  "name": "plug-aunt-jackie",
+  "version": "0.1.0",
+  "author": "JBIRD420",
+  "description": "small bot for Mix n Mash room managment",
+  "contributors": [
+    {
+      "name": "Dan McFadden",
+      "email": "d3mcfadden@gmail.com"
+    }
+  ],
+  "main": "./botname",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jbird2093/PlugDJbotAuntJackie.git"
+	},
+	"bin": {
+		"jackie": "./botname.js"
+	},
+  "keywords": [
+    "plugdj",
+    "bot"
+  ],
+	"dependencies" : {
+		"plugapi"   :  "git+https://github.com/atomjack/plugapi.git",
+		"request"   :  "*",
+		"entities" :  "*"
+	},
+  "analyze": false,
+  "devDependencies": {
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=0.6"
+  }
+}
