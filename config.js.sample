@@ -1,7 +1,10 @@
 var config = {
-    botCall: 'j2',
     auth: "",
     room: "",
+    Master: "",     //master programmer id for all functions override
+    botOwner: "",   //owner of bot. 2nd highest level permissions
+    userid: "",     //bot user.id value
 };
 
 module.exports = config;
+
