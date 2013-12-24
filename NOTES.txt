@@ -1,0 +1,22 @@
+TODO:
+*set bot.moderateRemoveDJ(userid); to fire at (config.songLimit*60) into track play when ((currentsong.duration > (config.songLimit*60))
+
+*set avatar if (spkr.isStaff || spkr.isOwner || spkr.isMaster)
+
+*if (deck and/or getWaitList.length <= 1), have selfCommand('dj');
+			-may want to add an item config.onDeck - not forseen necessary at this time.
+*if (deck and/or getWaitList.length > 1), have selfCommand('down');
+
+
+implemetation notes:
+---------------------------------------------------------------------------------------------------------------------
+bot.waitListJoin();										//makes user add self to wait list
+	/dj
+bot.waitListLeave();									//makes user remove self from wait list
+	/down
+
+
+bot.moderateAddDJ(userid);								//uses bouncer+ rights to remove a user from waitlist
+	/skip
+bot.moderateRemoveDJ(userid);							//uses bouncer+ rights to remove a user from waitlist
+	/punt
