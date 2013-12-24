@@ -7,6 +7,11 @@ TODO:
 			-may want to add an item config.onDeck - not forseen necessary at this time.
 *if (deck and/or getWaitList.length > 1), have selfCommand('down');
 
+*get gametime moved over. will need to bring over //gametimevars
+
+
+
+
 
 implemetation notes:
 ---------------------------------------------------------------------------------------------------------------------
