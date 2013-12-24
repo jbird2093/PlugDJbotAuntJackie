@@ -1,3 +1,4 @@
+// vim: set expandtab ts=4 sw=4:
 var _ = require("./lib/underscore");
 var plugAPI;
 try {
