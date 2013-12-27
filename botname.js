@@ -62,6 +62,7 @@ try {
 }
 
 //Connects to mysql server
+var client = null;
 if (config.usedb) {
     try {
         mysql = require('mysql');
@@ -89,8 +90,15 @@ var bot = new PlugAPI(config.auth, UPDATECODE);
 
 var botObj = {
     'config': config,
-    'bot': bot
+    'bot': bot,
+    'db' : client
 };
+
+bot.on("reconnect", function() {
+    console.log("here...");
+    bot = new PlugAPI(config.auth, UPDATECODE);
+    bot.connect(config.room);
+});
 
 /* ===== REQUIRED MODULES ====== */
 // init base bot
