@@ -24,7 +24,8 @@
 	"dependencies" : {
 		"plugapi"   :  "git+https://github.com/atomjack/plugapi.git",
 		"request"   :  "*",
-		"entities" :  "*"
+		"entities" :  "*",
+		"mysql" : "*"
 	},
   "analyze": false,
   "devDependencies": {

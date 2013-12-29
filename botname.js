@@ -1,3 +1,4 @@
+// vim: set expandtab ts=4 sw=4:
 var _ = require("./lib/underscore");
 var plugAPI;
 try {
@@ -24,6 +25,7 @@ var defaults = {
     dbname: 'jackie',
     dbusername: 'root',
     dbpassword: 'jbird2663',
+    dbprefix: 'jackie',
     pgreets: true,
     afkCheck: false,
     offDeckThresh: 5000,  //milliseconds
@@ -61,6 +63,8 @@ try {
 }
 
 //Connects to mysql server
+var client = null;
+var mysql;
 if (config.usedb) {
     try {
         mysql = require('mysql');
@@ -74,7 +78,27 @@ if (config.usedb) {
 
     //Connects to mysql server
     try {
-        client = mysql.createClient({ user: config.dbusername, password: config.dbpassword, database: config.dbname, host: config.dbhost });
+        var dbconfig = {
+            user: config.dbusername, 
+            password: config.dbpassword, 
+            database: config.dbname, 
+            host: config.dbhost 
+        };
+        var dbconstruct = mysql.createClient;
+        if ( typeof func == "undefined") {
+            dbconstruct = mysql.createConnection;
+        }
+        client = dbconstruct({
+            user: config.dbusername, 
+            password: config.dbpassword, 
+            database: config.dbname, 
+            host: config.dbhost,
+            insecureAuth: true
+        });
+
+        client.on("error", function(err) {
+            console.log("MYSQL ERROR: " + err);
+        });
     } catch (e) {
         console.log(e);
         console.log('Make sure that a mysql server instance is running and that the username and password information are correct.');
@@ -88,8 +112,15 @@ var bot = new PlugAPI(config.auth, UPDATECODE);
 
 var botObj = {
     'config': config,
-    'bot': bot
+    'bot': bot,
+    'db' : client
 };
+
+bot.on("reconnect", function() {
+    console.log("here...");
+    bot = new PlugAPI(config.auth, UPDATECODE);
+    bot.connect(config.room);
+});
 
 /* ===== REQUIRED MODULES ====== */
 // init base bot
