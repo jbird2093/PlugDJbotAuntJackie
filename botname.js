@@ -85,7 +85,7 @@ if (config.usedb) {
             host: config.dbhost 
         };
         var dbconstruct = mysql.createClient;
-        if ( typeof func == "undefined") {
+        if ( typeof dbconstruct == "undefined") {
             dbconstruct = mysql.createConnection;
         }
         client = dbconstruct({
