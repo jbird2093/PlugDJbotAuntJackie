@@ -21,15 +21,16 @@
     "plugdj",
     "bot"
   ],
-	"dependencies" : {
-		"plugapi"   :  "git+https://github.com/atomjack/plugapi.git",
-		"request"   :  "*",
-		"entities" :  "*",
-		"mysql" : "*"
-	},
-  "analyze": false,
-  "devDependencies": {
+  "dependencies" : {
+	"plugapi"   :  "git+https://github.com/atomjack/plugapi.git",
+	"request"   :  "*",
+	"entities" :  "*",
+	"mysql" : "*"
   },
+  "devDependencies": {
+	"qunit": "~0.5"
+  },
+  "analyze": false,
   "license": "MIT",
   "engines": {
     "node": ">=0.6"
