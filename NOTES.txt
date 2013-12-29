@@ -17,7 +17,7 @@ TODO:
 *get gametime moved over. seek to make this variable related in that can say "/gametime r !p1 !p2 !p3" or "/gametime r !p1 !p2" and same loop recognizes number of players in this game.
 			*DO NOT have this game pause when a user is removed from the wait list.  keep it free rolling.
 
-*get setEnterMsg() and getEnterMsg() working to where can use a single table in database called "config"
+*get getTheme() and setTheme() working to where can use a single table in database called "config"
 	*allow for saving of runtime vars in database.  ease of restart. may be necessary if we can alleviate multiple instances being alowed when using "reconnect"
 
 

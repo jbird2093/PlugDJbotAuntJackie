@@ -28,7 +28,6 @@ var defaults = {
     dbprefix: 'jackie',
     pgreets: true,
     afkCheck: false,
-    offDeckThresh: 5000,  //milliseconds
     afkMin: 15, //default value for afk checking
     songTimer: false,
     songLimit: 8, //minutes
