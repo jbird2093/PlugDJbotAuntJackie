@@ -28,7 +28,8 @@
 	"mysql" : "*"
   },
   "devDependencies": {
-	"qunit": "~0.5"
+	"qunit": "~0.5",
+	"events": "~1.0"
   },
   "analyze": false,
   "license": "MIT",
