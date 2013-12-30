@@ -33,6 +33,17 @@ TODO:
 	*definitely can say "/ban JBIRD420"  consider the easy way while typing would be "jban @JBIRD420".  since in command we recognize param = "@JBIRD420" we can use that name as leverage to discover userID
 
 
+
+
+---------------------------------------------------------------------------------------------------------------------
+ITEMS IN API THAT DON'T WORK
+bot.on('djJoin', djJoin);
+bot.on('djLeave', djLeave);
+---------------------------------------------------------------------------------------------------------------------
+
+
+
+
 implemetation notes:
 ---------------------------------------------------------------------------------------------------------------------
 bot.waitListJoin();										//makes user add self to wait list
