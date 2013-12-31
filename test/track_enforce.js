@@ -47,8 +47,8 @@ test("track length enforce", function(assert) {
 	// fake a dj advance and make sure we spoke
 	enforce.nextDJ();
 	equal(mockbot.speakCount, 1, "bot spoke about track len");
-	equal(enforce.warning_func, undefined, "warning func registered");
-	ok(typeof enforce.boot_func !== "undefined", "boot func registered");
+	ok(enforce.warning_func, "warning func registered");
+	ok(enforce.boot_func, "boot func registered");
 });
 
 test("track length with no warning", function(assert) {
