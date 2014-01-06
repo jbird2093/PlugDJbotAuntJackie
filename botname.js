@@ -14,29 +14,7 @@ var mysql;
 var config = require("./config");
 
 var defaults = {
-    botName: 'unnamed bot',
-    botGreetings: ['/', 'bot ', 'bot', 'j'],
-    botCall: 'j',
-    openDate: 'XX/XX/XX',
-    roomTheme: 'Welcome to the room', //only echoed out in commands, no functionality
-    startTime: new Date(),
-    usedb: true,
-    dbhost: 'localhost',
-    dbname: 'jackie',
-    dbusername: 'root',
-    dbpassword: 'jbird2663',
-    dbprefix: 'jackie',
-    pgreets: true,
-    afkCheck: false,
-    afkMin: 15, //default value for afk checking
-    songTimer: false,
-    songLimit: 8, //minutes
-    songCheck: false,
-    deckPlays: 5,
-    danceMode: true,
-    games: true,
-    sexy: true,
-    autobop: false,
+
 };
 
 _.defaults(config, defaults);
