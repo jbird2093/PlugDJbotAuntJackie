@@ -1,12 +1,15 @@
 TODO:
 
+History Object:
+user -  object - the User Object of the user who played the song in the history
+room -  object - object which contains information on the votes, grabs, and audience of the song (see below)
+media - object - object which contains information about the video or sound (see below)
+
 *figure out why "bot.addSongToPlaylist(plugRoom.playlistID, currentSong.id)" does not increment the on screen "grabs"
 	*do we go ahead and implement playlist organization in the bot?  multiple playlists, allow changing of that playlist, move a track in that playlist, etc....
 
 *complete getUserId(username).   this will help in doing "/ban X" where we can either type whole name like "@JBIRD420" or substring like "JBIRD". 
 	Leads to other commands like  bot.moderateBanUser(userID, reason)
-
-*set bot.moderateRemoveDJ(userid); to fire at (config.songLimit*60) into track play when ((currentsong.duration > (config.songLimit*60))
 
 *set avatar if (spkr.isStaff || spkr.isOwner || spkr.isMaster)
 
